@@ -45,6 +45,7 @@ ob_start();
 				// aggiungere gestione upload delle sottocartelle
 				if ( is_dir($local_dir . $file) ) {
 					if (!ftp_directory_exists($conn_id, $remote_dir . $file)) {
+						// ftp_mkdir($conn_id, $remote_dir . $file);
 						echo "folder not found - make it: $local_dir$file\n<br>";
 						ftp_mkdir($conn_id, $remote_dir . $file);
 					}
